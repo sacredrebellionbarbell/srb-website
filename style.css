@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Lato:wght@300;400;700;900&display=swap');
 
 :root {
-  --black: #0D0D0D;
+  --black: #000000;
   --bone: #F5F3EF;
   --gold: #A77955;
   --copper: #A25C6B;
@@ -33,7 +33,11 @@ img {
 h1,
 h2,
 h3,
-nav a {
+nav a,
+.hero a,
+#events a,
+.contact-links a,
+.value-title {
   font-family: 'Cinzel', serif;
   letter-spacing: 0.06em;
 }
@@ -59,11 +63,12 @@ h3 {
 
 p,
 li {
+  font-family: 'Lato', sans-serif;
   font-size: 1.05rem;
 }
 
 header {
-  background: rgba(13, 13, 13, 0.96);
+  background: #000000;
   border-bottom: 1px solid rgba(167, 121, 85, 0.35);
   padding: 24px 5% 16px;
   display: flex;
@@ -109,8 +114,8 @@ section {
   justify-content: center;
   text-align: center;
   background:
-    radial-gradient(circle at center, rgba(167, 121, 85, 0.14), transparent 38%),
-    linear-gradient(180deg, #0D0D0D 0%, #050505 100%);
+    radial-gradient(circle at center, rgba(167, 121, 85, 0.12), transparent 38%),
+    #000000;
 }
 
 .hero-text {
@@ -125,7 +130,8 @@ section {
 }
 
 .hero a,
-#events a {
+#events a,
+.contact-links a {
   display: inline-block;
   width: fit-content;
   margin: 28px 8px 0;
@@ -133,27 +139,28 @@ section {
   border: 1px solid var(--gold);
   color: var(--bone);
   text-decoration: none;
-  font-family: 'Cinzel', serif;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   font-size: 0.9rem;
 }
 
 .hero a:first-of-type,
-#events a {
+#events a,
+.contact-links a:first-of-type {
   background: var(--gold);
   color: var(--black);
 }
 
 .hero a:hover,
-#events a:hover {
+#events a:hover,
+.contact-links a:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(167, 121, 85, 0.25);
 }
 
 #memberships {
   background:
-    linear-gradient(rgba(13, 13, 13, 0.96), rgba(13, 13, 13, 0.96)),
+    linear-gradient(rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.96)),
     radial-gradient(circle at top, rgba(162, 92, 107, 0.16), transparent 42%);
   text-align: center;
 }
@@ -172,7 +179,7 @@ section {
   padding: 38px;
   text-align: left;
   border: 1px solid rgba(167, 121, 85, 0.42);
-  background: linear-gradient(145deg, rgba(58, 58, 58, 0.35), rgba(0, 0, 0, 0.65));
+  background: linear-gradient(145deg, rgba(58, 58, 58, 0.26), rgba(0, 0, 0, 0.78));
 }
 
 #memberships div p:nth-of-type(1) {
@@ -186,7 +193,7 @@ section {
   text-align: center;
   background:
     radial-gradient(circle at center, rgba(167, 121, 85, 0.08), transparent 35%),
-    #080808;
+    #000000;
 }
 
 #events img {
@@ -223,7 +230,7 @@ section {
   margin-top: 56px;
 }
 
-#about ul {
+.values {
   list-style: none;
   padding: 0;
   margin-top: 40px;
@@ -232,16 +239,76 @@ section {
   gap: 18px;
 }
 
-#about li {
+.values li {
+  position: relative;
+  overflow: hidden;
   border: 1px solid rgba(167, 121, 85, 0.34);
-  padding: 22px;
+  padding: 24px;
   text-align: center;
   color: var(--gold);
-  font-family: 'Cinzel', serif;
-  min-height: 110px;
+  min-height: 150px;
   display: flex;
   align-items: center;
   justify-content: center;
+  background: rgba(0, 0, 0, 0.62);
+  transition: 0.25s ease;
+}
+
+.value-title,
+.value-definition {
+  transition: 0.25s ease;
+}
+
+.value-title {
+  color: var(--gold);
+  font-size: 1rem;
+  text-transform: uppercase;
+}
+
+.value-definition {
+  position: absolute;
+  inset: 0;
+  padding: 20px;
+  opacity: 0;
+  color: var(--bone);
+  font-family: 'Lato', sans-serif;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(167, 121, 85, 0.12);
+}
+
+.values li:hover {
+  border-color: var(--gold);
+  transform: translateY(-4px);
+}
+
+.values li:hover .value-title {
+  opacity: 0;
+}
+
+.values li:hover .value-definition {
+  opacity: 1;
+}
+
+#contact {
+  text-align: center;
+  background:
+    radial-gradient(circle at top, rgba(167, 121, 85, 0.1), transparent 38%),
+    #000000;
+}
+
+#contact p {
+  max-width: 680px;
+  margin: 0 auto;
+  color: rgba(245, 243, 239, 0.82);
+  font-size: 1.2rem;
+}
+
+.contact-links {
+  margin-top: 20px;
 }
 
 @media (max-width: 850px) {
@@ -266,7 +333,11 @@ section {
     margin: 14px 0;
   }
 
-  #about ul {
+  .values {
     grid-template-columns: 1fr;
+  }
+
+  .values li {
+    min-height: 135px;
   }
 }
