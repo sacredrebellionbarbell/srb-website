@@ -33,11 +33,12 @@ img {
 h1,
 h2,
 h3,
+h4,
 nav a,
 .hero a,
 #events a,
 .contact-links a,
-.value-title {
+.opening-banner {
   font-family: 'Cinzel', serif;
   letter-spacing: 0.06em;
 }
@@ -59,6 +60,16 @@ h2 {
 h3 {
   color: var(--gold);
   font-size: 1.35rem;
+  text-align: center;
+  margin-top: 56px;
+}
+
+h4 {
+  color: var(--gold);
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 1rem;
+  text-transform: uppercase;
 }
 
 p,
@@ -129,6 +140,22 @@ section {
   font-size: 1.22rem;
 }
 
+.opening-banner {
+  margin-top: 40px;
+  display: inline-block;
+  padding: 14px 22px;
+  border: 1px solid rgba(167, 121, 85, 0.45);
+  color: var(--gold);
+  background: rgba(167, 121, 85, 0.08);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
+}
+
+.hero-buttons {
+  margin-top: 6px;
+}
+
 .hero a,
 #events a,
 .contact-links a {
@@ -170,7 +197,7 @@ section {
   margin-bottom: 45px;
 }
 
-#memberships > div {
+.membership-card {
   display: inline-block;
   vertical-align: top;
   width: calc(50% - 28px);
@@ -182,7 +209,7 @@ section {
   background: linear-gradient(145deg, rgba(58, 58, 58, 0.26), rgba(0, 0, 0, 0.78));
 }
 
-#memberships div p:nth-of-type(1) {
+.membership-card .price {
   font-family: 'Cinzel', serif;
   font-size: 2.6rem;
   color: var(--gold);
@@ -225,72 +252,25 @@ section {
   letter-spacing: 0.04em;
 }
 
-#about h3 {
-  text-align: center;
-  margin-top: 56px;
-}
-
 .values {
-  list-style: none;
-  padding: 0;
   margin-top: 40px;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 18px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 22px;
 }
 
-.values li {
-  position: relative;
-  overflow: hidden;
-  border: 1px solid rgba(167, 121, 85, 0.34);
+.value-card {
+  border: 1px solid rgba(167, 121, 85, 0.35);
+  background: rgba(255, 255, 255, 0.02);
   padding: 24px;
-  text-align: center;
-  color: var(--gold);
-  min-height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(0, 0, 0, 0.62);
-  transition: 0.25s ease;
+  text-align: left;
 }
 
-.value-title,
-.value-definition {
-  transition: 0.25s ease;
-}
-
-.value-title {
-  color: var(--gold);
-  font-size: 1rem;
-  text-transform: uppercase;
-}
-
-.value-definition {
-  position: absolute;
-  inset: 0;
-  padding: 20px;
-  opacity: 0;
-  color: var(--bone);
-  font-family: 'Lato', sans-serif;
+.value-card p {
   font-size: 0.95rem;
-  line-height: 1.45;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(167, 121, 85, 0.12);
-}
-
-.values li:hover {
-  border-color: var(--gold);
-  transform: translateY(-4px);
-}
-
-.values li:hover .value-title {
-  opacity: 0;
-}
-
-.values li:hover .value-definition {
-  opacity: 1;
+  line-height: 1.6;
+  color: rgba(245, 243, 239, 0.82);
+  text-align: left !important;
 }
 
 #contact {
@@ -328,16 +308,12 @@ section {
     font-size: clamp(2.2rem, 12vw, 4rem);
   }
 
-  #memberships > div {
+  .membership-card {
     width: 100%;
     margin: 14px 0;
   }
 
   .values {
     grid-template-columns: 1fr;
-  }
-
-  .values li {
-    min-height: 135px;
   }
 }
