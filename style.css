@@ -391,21 +391,61 @@ section {
   margin-top: 56px;
 }
 
-.core-values-heading {
-  font-size: clamp(3rem, 7vw, 6.8rem) !important;
-  line-height: 1;
-  margin-top: 86px !important;
-  margin-bottom: 60px !important;
-  text-transform: uppercase;
+.core-heading-frame {
+  width: min(640px, 94vw);
+  min-height: 300px;
+  margin: 86px auto 52px;
+  padding: 74px 62px 64px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background-image: url('assets/ornate-frame.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 
-.core-values-heading::after {
-  content: '◆';
-  display: block;
-  color: var(--gold);
-  font-size: 1.2rem;
+.core-values-heading {
+  font-size: clamp(2.7rem, 6.2vw, 5.8rem) !important;
+  line-height: 0.95;
+  margin: 0 !important;
+  text-transform: uppercase;
+  text-shadow: 0 0 22px rgba(167, 121, 85, 0.24);
+}
+
+.ornate-divider {
+  width: min(320px, 70%);
+  height: 18px;
   margin-top: 18px;
-  opacity: 0.75;
+  position: relative;
+}
+
+.ornate-divider::before,
+.ornate-divider::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  width: 44%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+  opacity: 0.76;
+}
+
+.ornate-divider::before {
+  left: 0;
+}
+
+.ornate-divider::after {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.ornate-divider {
+  background:
+    radial-gradient(circle at center, var(--gold) 0 3px, transparent 4px),
+    radial-gradient(circle at center, transparent 0 7px, rgba(167, 121, 85, 0.72) 8px, transparent 9px);
 }
 
 .values {
@@ -482,6 +522,18 @@ section {
 
   h1 {
     font-size: clamp(2.2rem, 12vw, 4rem);
+  }
+
+  .core-heading-frame {
+    width: min(420px, 96vw);
+    min-height: 220px;
+    padding: 52px 38px 44px;
+    margin-top: 64px;
+    margin-bottom: 40px;
+  }
+
+  .core-values-heading {
+    font-size: clamp(2rem, 11vw, 3.4rem) !important;
   }
 
   .membership-card,
