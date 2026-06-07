@@ -19,7 +19,9 @@ html {
 
 body {
   margin: 0;
-  background: var(--black);
+  background:
+    radial-gradient(circle at 50% 0%, rgba(167, 121, 85, 0.055), transparent 28%),
+    var(--black);
   color: var(--bone);
   font-family: 'Lato', sans-serif;
   line-height: 1.6;
@@ -38,6 +40,7 @@ nav a,
 .hero a,
 #events a,
 .contact-links a,
+.membership-cta,
 .opening-banner,
 .price {
   font-family: 'Cinzel', serif;
@@ -169,7 +172,8 @@ section {
 
 .hero a,
 #events a,
-.contact-links a {
+.contact-links a,
+.membership-cta {
   display: inline-block;
   width: fit-content;
   margin: 28px 8px 0;
@@ -184,14 +188,16 @@ section {
 
 .hero a:first-of-type,
 #events a,
-.contact-links a:first-of-type {
+.contact-links a:first-of-type,
+.membership-cta {
   background: var(--gold);
   color: var(--black);
 }
 
 .hero a:hover,
 #events a:hover,
-.contact-links a:hover {
+.contact-links a:hover,
+.membership-cta:hover {
   transform: translateY(-2px);
   box-shadow: 0 10px 30px rgba(167, 121, 85, 0.25);
 }
@@ -208,6 +214,13 @@ section {
   flex-wrap: wrap;
   justify-content: center;
   gap: 28px;
+}
+
+
+.membership-cta {
+  margin: 0 auto 38px;
+  display: inline-block;
+  text-align: center;
 }
 
 .membership-card {
@@ -322,9 +335,25 @@ section {
 }
 
 .core-values-heading {
-  font-size: clamp(2.6rem, 5.5vw, 5.5rem);
-  margin-top: 76px;
-  margin-bottom: 42px;
+  font-size: clamp(3.1rem, 7vw, 7rem);
+  margin-top: 82px;
+  margin-bottom: 58px;
+  letter-spacing: 0.09em;
+  position: relative;
+}
+
+.core-values-heading::after {
+  content: "✦";
+  display: block;
+  width: min(420px, 80%);
+  margin: 22px auto 0;
+  color: var(--gold);
+  font-size: 1rem;
+  line-height: 1;
+  text-align: center;
+  border-top: 1px solid rgba(167, 121, 85, 0.5);
+  border-bottom: 1px solid rgba(167, 121, 85, 0.12);
+  padding-top: 12px;
 }
 
 .values {
@@ -332,14 +361,14 @@ section {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 28px;
-  max-width: 1280px;
+  gap: 34px;
+  max-width: 1420px;
 }
 
 .value-card {
-  width: min(410px, 100%);
-  min-height: 265px;
-  padding: 42px 34px;
+  width: min(430px, 100%);
+  min-height: 300px;
+  padding: 58px 38px 50px;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -347,42 +376,93 @@ section {
   align-items: center;
 }
 
+.value-card h4 {
+  color: var(--gold);
+  font-size: clamp(1.15rem, 1.6vw, 1.48rem);
+  letter-spacing: 0.075em;
+  line-height: 1.35;
+  margin-bottom: 46px;
+  position: relative;
+}
+
+.value-card h4::after {
+  content: "";
+  display: block;
+  width: 92px;
+  height: 1px;
+  margin: 20px auto 0;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.65;
+}
+
 .value-card p {
   text-align: center;
   margin: 0;
-  color: rgba(245, 243, 239, 0.86);
-  font-size: 1.05rem;
-  line-height: 1.65;
+  color: rgba(245, 243, 239, 0.88);
+  font-size: 1.06rem;
+  line-height: 1.72;
+  max-width: 340px;
 }
 
 .ornate-card {
   position: relative;
-  border: 1px solid rgba(167, 121, 85, 0.46);
+  overflow: hidden;
+  border: 1px solid rgba(167, 121, 85, 0.72);
   background:
-    linear-gradient(145deg, rgba(167, 121, 85, 0.045), rgba(0, 0, 0, 0.86));
+    radial-gradient(circle at 50% 0%, rgba(167, 121, 85, 0.1), transparent 42%),
+    linear-gradient(145deg, rgba(167, 121, 85, 0.05), rgba(0, 0, 0, 0.92));
   box-shadow:
-    inset 0 0 0 1px rgba(167, 121, 85, 0.1),
-    0 20px 70px rgba(0, 0, 0, 0.55);
+    inset 0 0 0 1px rgba(167, 121, 85, 0.18),
+    inset 0 0 36px rgba(167, 121, 85, 0.04),
+    0 22px 80px rgba(0, 0, 0, 0.7);
 }
 
 .ornate-card::before,
 .ornate-card::after {
-  content: "✦";
   position: absolute;
   color: var(--gold);
-  font-size: 0.9rem;
-  opacity: 0.85;
+  font-family: 'Cinzel', serif;
+  font-size: 1.3rem;
+  opacity: 0.95;
   line-height: 1;
+  pointer-events: none;
+  text-shadow: 0 0 18px rgba(167, 121, 85, 0.35);
 }
 
 .ornate-card::before {
-  top: 12px;
-  left: 14px;
+  content: "❧";
+  top: 13px;
+  left: 16px;
 }
 
 .ornate-card::after {
+  content: "❧";
+  bottom: 13px;
+  right: 16px;
+  transform: rotate(180deg);
+}
+
+.value-card .corner-tr,
+.value-card .corner-bl {
+  position: absolute;
+  width: 72px;
+  height: 72px;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.value-card .corner-tr {
+  top: 12px;
+  right: 12px;
+  border-top: 1px solid rgba(167, 121, 85, 0.7);
+  border-right: 1px solid rgba(167, 121, 85, 0.7);
+}
+
+.value-card .corner-bl {
   bottom: 12px;
-  right: 14px;
+  left: 12px;
+  border-bottom: 1px solid rgba(167, 121, 85, 0.7);
+  border-left: 1px solid rgba(167, 121, 85, 0.7);
 }
 
 #contact {
