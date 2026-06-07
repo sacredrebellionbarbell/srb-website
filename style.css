@@ -23,7 +23,6 @@ body {
   color: var(--bone);
   font-family: 'Lato', sans-serif;
   line-height: 1.6;
-  text-align: center;
 }
 
 img {
@@ -39,7 +38,8 @@ nav a,
 .hero a,
 #events a,
 .contact-links a,
-.opening-banner {
+.opening-banner,
+.price {
   font-family: 'Cinzel', serif;
   letter-spacing: 0.06em;
 }
@@ -49,10 +49,11 @@ h1 {
   line-height: 1.08;
   color: var(--gold);
   margin: 0 0 28px;
+  text-align: center;
 }
 
 h2 {
-  font-size: clamp(2.35rem, 5.5vw, 4.4rem);
+  font-size: clamp(2.4rem, 5vw, 4.8rem);
   color: var(--gold);
   text-align: center;
   margin: 0 0 18px;
@@ -60,15 +61,23 @@ h2 {
 
 h3 {
   color: var(--gold);
-  font-size: clamp(1.4rem, 3vw, 2.1rem);
+  font-size: clamp(1.35rem, 2.2vw, 2rem);
   text-align: center;
+}
+
+h4 {
+  color: var(--gold);
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.08rem;
+  line-height: 1.35;
+  margin: 0 0 24px;
 }
 
 p,
 li {
   font-family: 'Lato', sans-serif;
   font-size: 1.05rem;
-  text-align: center;
 }
 
 header {
@@ -112,8 +121,9 @@ section {
 }
 
 .section-lead {
-  max-width: 780px;
-  margin: 0 auto 40px;
+  max-width: 760px;
+  margin: 0 auto 45px;
+  text-align: center;
   color: rgba(245, 243, 239, 0.82);
   font-size: 1.18rem;
 }
@@ -138,18 +148,19 @@ section {
   margin: 0 auto;
   color: rgba(245, 243, 239, 0.86);
   font-size: 1.22rem;
+  text-align: center;
 }
 
 .opening-banner {
   margin-top: 40px;
   display: inline-block;
   padding: 14px 22px;
-  border: 1px solid rgba(167,121,85,.45);
+  border: 1px solid rgba(167, 121, 85, 0.45);
   color: var(--gold);
-  background: rgba(167,121,85,.08);
+  background: rgba(167, 121, 85, 0.08);
   text-transform: uppercase;
-  letter-spacing: .08em;
-  font-size: .9rem;
+  letter-spacing: 0.08em;
+  font-size: 0.9rem;
 }
 
 .hero-buttons {
@@ -185,70 +196,46 @@ section {
   box-shadow: 0 10px 30px rgba(167, 121, 85, 0.25);
 }
 
-#memberships {
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.96), rgba(0, 0, 0, 0.96)),
-    radial-gradient(circle at top, rgba(162, 92, 107, 0.16), transparent 42%);
-  text-align: center;
-}
-
-#memberships h2 {
-  font-size: clamp(2.8rem, 6vw, 5rem);
-}
-
-#memberships > p {
-  color: rgba(245, 243, 239, 0.78);
-  margin-bottom: 45px;
+#memberships,
+#testimonials,
+#about,
+#contact {
+  background: #000000;
 }
 
 .membership-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 28px;
-  max-width: 980px;
-  margin: 0 auto;
 }
 
 .membership-card {
-  min-height: 320px;
-  padding: 42px 34px;
+  width: min(470px, 100%);
+  min-height: 300px;
+  padding: 42px 32px;
   text-align: center;
-  border: 1px solid rgba(167, 121, 85, 0.52);
-  background: linear-gradient(145deg, rgba(58, 58, 58, 0.32), rgba(0, 0, 0, 0.82));
-  box-shadow: 0 18px 50px rgba(0,0,0,.32);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
 .membership-card h3 {
-  margin-top: 0;
-  margin-bottom: 16px;
-  font-size: clamp(1.5rem, 3vw, 2.15rem);
-  text-align: center;
-}
-
-.membership-card p {
-  text-align: center;
-  max-width: 420px;
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  margin: 0 0 18px;
 }
 
 .price {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(3rem, 6vw, 4.6rem);
-  line-height: 1;
+  font-size: clamp(3rem, 5vw, 4.3rem);
   color: var(--gold);
-  margin: 16px 0 18px;
+  margin: 18px 0 14px;
   text-align: center;
+  line-height: 1;
 }
 
 .price span {
-  display: block;
-  margin-top: 8px;
   font-family: 'Lato', sans-serif;
   font-size: 1rem;
-  color: rgba(245,243,239,.72);
+  margin-left: 6px;
+  color: rgba(245, 243, 239, 0.75);
+  text-transform: uppercase;
 }
 
 #events {
@@ -268,81 +255,54 @@ section {
 
 #events p {
   color: rgba(245, 243, 239, 0.82);
-}
-
-#reviews {
-  background:
-    radial-gradient(circle at top, rgba(167, 121, 85, 0.08), transparent 40%),
-    #000000;
+  text-align: center;
 }
 
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 22px;
-  max-width: 1200px;
-  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 42px;
 }
 
 .testimonial-card {
-  border: 1px solid rgba(167, 121, 85, 0.34);
-  background: rgba(255,255,255,.02);
-  padding: 28px;
-  text-align: center;
-}
-
-.testimonial-card h3 {
-  margin-top: 0;
+  padding: 32px;
   text-align: center;
 }
 
 .testimonial-card p {
-  font-size: .98rem;
-  line-height: 1.65;
-  color: rgba(245,243,239,.84);
   text-align: center;
+  color: rgba(245, 243, 239, 0.82);
+  font-size: 1rem;
 }
 
-.featured-testimonial {
-  grid-column: 1 / -1;
-  max-width: 980px;
-  margin: 0 auto;
-}
-
-.attribution {
+.testimonial-note {
   color: var(--gold) !important;
-  font-style: italic;
+  font-weight: 700;
 }
 
-#social {
-  background: #000000;
+.instagram-section {
+  margin-top: 70px;
 }
 
 .instagram-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(280px, 1fr));
-  gap: 28px;
-  align-items: start;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-.instagram-card {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  min-width: 0;
+  gap: 26px;
+  flex-wrap: wrap;
+  margin-top: 30px;
 }
 
-.instagram-card .instagram-media {
-  margin: 0 auto !important;
-  max-width: 540px !important;
-  min-width: 280px !important;
+.instagram-media {
+  min-width: 300px !important;
+  max-width: 440px !important;
   width: 100% !important;
+  margin: 0 !important;
 }
 
 #about {
-  max-width: 1120px;
+  max-width: 1220px;
   margin: 0 auto;
 }
 
@@ -350,6 +310,9 @@ section {
   font-size: 1.25rem;
   text-align: center;
   color: rgba(245, 243, 239, 0.82);
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .about-lead {
@@ -358,38 +321,116 @@ section {
   letter-spacing: 0.04em;
 }
 
-#about h3 {
-  text-align: center;
-  margin-top: 56px;
-}
-
 .core-values-heading {
-  font-size: clamp(2.6rem, 5.5vw, 4.5rem);
-  margin-top: 72px !important;
-  margin-bottom: 20px;
+  font-size: clamp(2.6rem, 5.5vw, 5.5rem);
+  margin-top: 76px;
+  margin-bottom: 42px;
 }
 
 .values {
-  margin-top: 40px;
+  margin: 40px auto 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 18px;
+  gap: 28px;
+  max-width: 1280px;
 }
 
 .value-card {
-  width: 410px;
-  min-height: 260px;
-
-  border: 1px solid rgba(167, 121, 85, 0.34);
-  background: rgba(0, 0, 0, 0.62);
-
-  padding: 24px;
-
+  width: min(410px, 100%);
+  min-height: 265px;
+  padding: 42px 34px;
   text-align: center;
-
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
+  align-items: center;
 }
+
+.value-card p {
+  text-align: center;
+  margin: 0;
+  color: rgba(245, 243, 239, 0.86);
+  font-size: 1.05rem;
+  line-height: 1.65;
+}
+
+.ornate-card {
+  position: relative;
+  border: 1px solid rgba(167, 121, 85, 0.46);
+  background:
+    linear-gradient(145deg, rgba(167, 121, 85, 0.045), rgba(0, 0, 0, 0.86));
+  box-shadow:
+    inset 0 0 0 1px rgba(167, 121, 85, 0.1),
+    0 20px 70px rgba(0, 0, 0, 0.55);
+}
+
+.ornate-card::before,
+.ornate-card::after {
+  content: "✦";
+  position: absolute;
+  color: var(--gold);
+  font-size: 0.9rem;
+  opacity: 0.85;
+  line-height: 1;
+}
+
+.ornate-card::before {
+  top: 12px;
+  left: 14px;
+}
+
+.ornate-card::after {
+  bottom: 12px;
+  right: 14px;
+}
+
+#contact {
+  text-align: center;
+  background:
+    radial-gradient(circle at top, rgba(167, 121, 85, 0.1), transparent 38%),
+    #000000;
+}
+
+#contact p {
+  max-width: 680px;
+  margin: 0 auto;
+  color: rgba(245, 243, 239, 0.82);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.contact-links {
+  margin-top: 20px;
+}
+
+@media (max-width: 850px) {
+  nav {
+    gap: 14px;
   }
+
+  section {
+    padding: 68px 6%;
+  }
+
+  header img {
+    width: 280px;
+  }
+
+  h1 {
+    font-size: clamp(2.2rem, 12vw, 4rem);
+  }
+
+  .value-card,
+  .membership-card {
+    width: 100%;
+  }
+
+  .instagram-grid {
+    display: block;
+  }
+
+  .instagram-media {
+    margin: 0 auto 24px !important;
+  }
+}
