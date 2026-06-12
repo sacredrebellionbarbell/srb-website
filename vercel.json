@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/supertotal",
+      "destination": "https://app.sacredrebellion.fit/supertotal",
+      "permanent": true
+    }
+  ]
+}
