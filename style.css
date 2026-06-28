@@ -161,7 +161,6 @@ section {
 a.button,
 .claim-button,
 a.claim-button,
-#events a.button,
 .contact-links a.button {
   display: inline-flex;
   align-items: center;
@@ -185,7 +184,6 @@ a.claim-button,
 a.button.primary,
 .claim-button,
 a.claim-button,
-#events a.button.primary,
 .contact-links a.button.primary {
   background: var(--gold);
   color: var(--black);
@@ -250,16 +248,27 @@ a.claim-button:hover {
   padding: 17px 28px;
 }
 
-.membership-grid {
+.membership-grid,
+.testimonial-grid,
+.instagram-grid,
+.values,
+.contact-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.membership-grid {
   gap: 28px;
   margin-top: 22px;
 }
 
+.single-membership {
+  justify-content: center;
+}
+
 .membership-card {
-  width: min(460px, 100%);
+  width: min(560px, 100%);
   min-height: 300px;
   margin: 0;
   padding: 38px;
@@ -286,26 +295,6 @@ a.claim-button:hover {
   text-align: center;
 }
 
-#events {
-  text-align: center;
-  background:
-    radial-gradient(circle at center, rgba(167, 121, 85, 0.08), transparent 35%),
-    #000000;
-}
-
-#events img {
-  width: min(900px, 100%);
-  height: auto;
-  margin: 30px auto;
-  border: 1px solid rgba(167, 121, 85, 0.42);
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.7);
-}
-
-#events p {
-  color: rgba(245, 243, 239, 0.82);
-  text-align: center;
-}
-
 .section-lead {
   max-width: 820px;
   margin: 0 auto;
@@ -321,9 +310,6 @@ a.claim-button:hover {
 }
 
 .testimonial-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 24px;
   max-width: 1360px;
   margin: 42px auto 0;
@@ -355,11 +341,8 @@ a.claim-button:hover {
 }
 
 .instagram-grid {
-  display: flex;
-  justify-content: center;
   align-items: flex-start;
   gap: 28px;
-  flex-wrap: wrap;
   margin-top: 36px;
 }
 
@@ -418,6 +401,9 @@ a.claim-button:hover {
   height: 18px;
   margin: 24px auto 0;
   position: relative;
+  background:
+    radial-gradient(circle at center, var(--gold) 0 3px, transparent 4px),
+    radial-gradient(circle at center, transparent 0 7px, rgba(167, 121, 85, 0.72) 8px, transparent 9px);
 }
 
 .ornate-divider::before,
@@ -440,17 +426,8 @@ a.claim-button:hover {
   transform: rotate(180deg);
 }
 
-.ornate-divider {
-  background:
-    radial-gradient(circle at center, var(--gold) 0 3px, transparent 4px),
-    radial-gradient(circle at center, transparent 0 7px, rgba(167, 121, 85, 0.72) 8px, transparent 9px);
-}
-
 .values {
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   gap: 28px;
   max-width: 1360px;
 }
@@ -529,9 +506,7 @@ a.claim-button:hover {
 .contact-links {
   margin-top: 20px;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  gap: 0;
 }
 
 @media (max-width: 850px) {
