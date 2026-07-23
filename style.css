@@ -621,6 +621,10 @@ a.claim-button:hover {
 }
 
 .founder-bio {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  align-items: center;
+  gap: 34px;
   margin: 64px auto 0;
   padding: 42px 34px;
   max-width: 980px;
@@ -629,12 +633,23 @@ a.claim-button:hover {
     linear-gradient(145deg, rgba(58, 58, 58, 0.22), rgba(0, 0, 0, 0.72));
 }
 
+.founder-bio img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid rgba(167, 121, 85, 0.58);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.38);
+}
+
 .founder-bio h3 {
   margin-top: 0;
+  text-align: left;
 }
 
 #about .founder-bio p {
   font-size: 1.12rem;
+  text-align: left;
 }
 
 .founder-credentials {
@@ -654,6 +669,7 @@ a.claim-button:hover {
   background: rgba(255, 255, 255, 0.025);
   font-size: 0.98rem;
   line-height: 1.35;
+  text-align: left;
 }
 
 @media (max-width: 850px) {
@@ -684,7 +700,19 @@ a.claim-button:hover {
   }
 
   .founder-bio {
+    grid-template-columns: 1fr;
     padding: 34px 22px;
+  }
+
+  .founder-bio img {
+    width: min(100%, 320px);
+    margin: 0 auto;
+  }
+
+  .founder-bio h3,
+  #about .founder-bio p,
+  .founder-credentials li {
+    text-align: center;
   }
 
   .founder-credentials {
