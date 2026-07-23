@@ -36,7 +36,8 @@ h3,
 h4,
 nav a,
 .button,
-.opening-banner {
+.opening-banner,
+.hero-offer {
   font-family: 'Cinzel', serif;
   letter-spacing: 0.06em;
 }
@@ -135,7 +136,7 @@ section {
 }
 
 .opening-banner {
-  margin: 46px auto 0;
+  margin: 30px auto 0;
   display: inline-block;
   padding: 20px 30px;
   border: 1px solid rgba(167, 121, 85, 0.65);
@@ -150,8 +151,35 @@ section {
   box-shadow: 0 0 30px rgba(167, 121, 85, 0.16);
 }
 
+.hero-offer {
+  width: min(620px, 100%);
+  margin: 30px auto 0;
+  padding: 18px 24px;
+  border-top: 1px solid rgba(167, 121, 85, 0.42);
+  border-bottom: 1px solid rgba(167, 121, 85, 0.42);
+  color: var(--bone);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hero-offer span,
+.hero-offer strong {
+  display: block;
+}
+
+.hero-offer span {
+  color: var(--gold);
+  font-size: clamp(1rem, 2vw, 1.3rem);
+}
+
+.hero-offer strong {
+  margin-top: 6px;
+  color: var(--bone);
+  font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
 .hero-buttons {
-  margin-top: 0;
+  margin-top: 4px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -178,6 +206,7 @@ a.claim-button,
   text-align: center;
   line-height: 1.2;
   cursor: pointer;
+  min-height: 52px;
 }
 
 .button.primary,
@@ -510,25 +539,40 @@ a.claim-button:hover {
 }
 
 @media (max-width: 850px) {
+  header {
+    padding: 20px 5% 14px;
+    gap: 14px;
+  }
+
   nav {
     gap: 14px;
   }
 
   section {
-    padding: 68px 6%;
+    padding: 44px 6%;
+  }
+
+  .hero {
+    min-height: auto;
   }
 
   header img {
-    width: 330px;
+    width: 210px;
   }
 
   h1 {
-    font-size: clamp(2.2rem, 12vw, 4rem);
+    font-size: clamp(1.9rem, 9.3vw, 2.8rem);
+    margin-bottom: 16px;
+  }
+
+  .hero-text p {
+    font-size: 1.08rem;
+    line-height: 1.5;
   }
 
   .opening-banner {
-    font-size: 1rem;
-    padding: 18px 20px;
+    font-size: 0.86rem;
+    padding: 14px 16px;
   }
 
   .core-values-heading {
@@ -547,7 +591,131 @@ a.claim-button:hover {
   }
 }
 
-.hero-first-week{margin-top:22px;color:rgba(245,243,239,.92);font-size:1.15rem;font-weight:700}
 .membership-features{list-style:none;padding:0;margin:26px 0}
 .membership-features li{margin:10px 0;font-size:1.15rem}
 .membership-note{margin-top:26px;color:rgba(245,243,239,.82);font-size:.95rem}
+
+.experience-cta {
+  text-align: center;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.94), rgba(0, 0, 0, 0.94)),
+    radial-gradient(circle at center, rgba(167, 121, 85, 0.18), transparent 46%);
+}
+
+.experience-cta h2 {
+  font-size: clamp(2.4rem, 5.8vw, 5rem);
+}
+
+.experience-cta p {
+  max-width: 720px;
+  margin: 16px auto 0;
+  color: rgba(245, 243, 239, 0.84);
+  font-size: 1.2rem;
+}
+
+.experience-cta .section-lead {
+  color: var(--gold);
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.founder-bio {
+  display: grid;
+  grid-template-columns: minmax(220px, 320px) 1fr;
+  align-items: center;
+  gap: 34px;
+  margin: 64px auto 0;
+  padding: 42px 34px;
+  max-width: 980px;
+  border: 1px solid rgba(167, 121, 85, 0.36);
+  background:
+    linear-gradient(145deg, rgba(58, 58, 58, 0.22), rgba(0, 0, 0, 0.72));
+}
+
+.founder-bio img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+  border: 1px solid rgba(167, 121, 85, 0.58);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.38);
+}
+
+.founder-bio h3 {
+  margin-top: 0;
+  text-align: left;
+}
+
+#about .founder-bio p {
+  font-size: 1.12rem;
+  text-align: left;
+}
+
+.founder-credentials {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px 22px;
+  max-width: 820px;
+  margin: 30px auto 0;
+  padding: 0;
+  list-style: none;
+}
+
+.founder-credentials li {
+  padding: 12px 14px;
+  border: 1px solid rgba(167, 121, 85, 0.28);
+  color: rgba(245, 243, 239, 0.86);
+  background: rgba(255, 255, 255, 0.025);
+  font-size: 0.98rem;
+  line-height: 1.35;
+  text-align: left;
+}
+
+@media (max-width: 850px) {
+  nav a {
+    font-size: 0.82rem;
+  }
+
+  .hero-offer {
+    margin-top: 22px;
+    padding: 12px 16px;
+  }
+
+  .hero-offer span {
+    font-size: 0.9rem;
+  }
+
+  .hero-offer strong {
+    font-size: 1.2rem;
+  }
+
+  .button,
+  a.button,
+  .claim-button,
+  a.claim-button,
+  .contact-links a.button {
+    width: min(100%, 360px);
+    margin-top: 16px;
+  }
+
+  .founder-bio {
+    grid-template-columns: 1fr;
+    padding: 34px 22px;
+  }
+
+  .founder-bio img {
+    width: min(100%, 320px);
+    margin: 0 auto;
+  }
+
+  .founder-bio h3,
+  #about .founder-bio p,
+  .founder-credentials li {
+    text-align: center;
+  }
+
+  .founder-credentials {
+    grid-template-columns: 1fr;
+  }
+}
